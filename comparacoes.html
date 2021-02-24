@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comparaçoes</title>
+    <script>
+        // ativa as verificaçoes adicionais 
+        // modo chato do JS
+        'use scrict'
+//parceInt ()-> TENTA converter um numero, se possivel
+// caso o texto não contenha um numero valido o resultafo será Nan
+//not a number
+
+        let numero = parseInt(prompt('Infoeme um numero MENOR que 1000:'))
+
+if (isNaN(numero)) {// O RESULTADO DA CONVERSÃO FOI NAN
+alert('não informou numero')
+}
+        else if(numero < 1000) {
+            alert ('parabens voce acertou')
+        }
+        else if(numero == 1000){
+            alert('1000 não é menor que 1000')
+            // um = é atribuição (dar valor)
+            // para comparar pelo menos 2 sinal de igual ==
+        }
+        else{
+            alert('infelismente voce nao acertou')
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
