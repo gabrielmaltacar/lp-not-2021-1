@@ -21,6 +21,17 @@
             5! = 5 * 4 * 3 * 2 * 1
             7! = 7 * 6 * 5 * 4 * 3 * 2 * 1         
         */
+        function fatorial(num) {        // Declaração da função
+            let fat = 1
+            for(let i = num; i > 1; i--) {
+                fat *= i            // Equivale a: fat = fat * i
+            }
+            return fat              // Retorno da função
+        }
+let x = fatorial(5)
+        let y = fatorial(4)
+        alert('O fatorial de 5 calculado pela função é ' + x)
+        alert('O fatorial de 4 calculado pela função é ' + y)
 
     </script>
 </head>
