@@ -21,18 +21,25 @@
             os dois valores informados (inclusive).            
         */
 
-       let num1, num2, maior, menor
+       let numero1, numero2;
 
-       // do..while que pede e valida num1 e num2
+        let somatoria = 0;
 
-       if(num1 < num2) {
-           menor = num1
-           maior = num2
-       }
-       else {
-           menor = num2
-           maior = num1
-       }
+        do {
+            numero1 = parseInt(prompt('Escreva o primeiro número que deseja somar : '))
+
+            numero2 = parseInt(prompt('Escreva o segundo numero que deseja : '))
+
+        } while(isNaN(numero1) || isNaN(numero2) || numero1 == numero2)
+
+      if (numero1 < numero2) 
+    {for (let x = numero1; x <= numero2; x++) {
+                somatoria += x;}
+
+        } else { for (let x = numero2; x <= numero1; x++) {
+                somatoria += x; }
+        }
+        document.write(`O resultado da soma dos numeros entre ${numero1} e ${numero2} é ${somatoria}`)
 
     </script>
 </head>
