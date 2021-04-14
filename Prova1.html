@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pagina modelo (prova1) Gabriel Malta</title>
+
+    <script>
+
+function Estação(){
+
+
+ for (let x = 400; x >= 1; x--) {
+if(x % 50 == 0) {
+ document.write(`Estações de embarque e desembarque no quilômetro:${x}<br>`)
+
+}
+ }
+ }
+    
+
+
+  let km
+ do {
+ km = parseInt(prompt('Escreva um quilômetro entre 1 e 400:'))
+ } while(isNaN(km) || km < 1 || km > 400)
+
+
+
+ let mensagem
+ switch(km) {
+case 98:
+ case 190:
+ case 283:
+ case 379:
+ mensagem = 'Postos de conveniência da Rede Mil Grau'
+break
+
+case 155:
+ case 355:
+ mensagem = 'Postos da Polícia Ferroviária (sim, isso existe!)'
+break
+
+
+case 137: 
+ mensagem = 'Aeroporto Interplanetário de Virapratos'
+break
+
+
+case 204: 
+mensagem = 'Hotel Cacique Internacional 6 estrelas'
+ break
+
+
+case 311: 
+mensagem = 'Boleli shopping center'
+break
+
+
+ case 356: 
+ mensagem = 'Acesso ao Acqua Park Unidade III'
+ break
+
+
+ default:
+mensagem = 'Nada aqui.'
+ }
+ alert(mensagem)
+
+
+
+  Estação()
+
+
+ </script>
+
+</head>
+
+<body>
+    
+</body>
+</html>
