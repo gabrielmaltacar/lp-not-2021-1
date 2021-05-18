@@ -58,6 +58,55 @@
                 passe um traço horizontal (<hr>).            
         */
 
+ let l1 = [] 
+ l1.push('Santa Teresinha')
+ l1.push('Estação')
+ l1.push('Centro')
+ l1.push('Aeroporto I')
+
+      
+for(let x = 0; x < l1.length; x++) {
+ document.write(l1[x] + '<br>') }
+     
+document.write('<hr>')
+
+ l1.unshift('City Petrópolis')
+ l1.push('Aeroporto IV')
+
+ for(let estacao of l1) {
+ document.write(estacao + '<br>')}
+
+document.write('<hr>')
+
+        
+ let p_estacao = l1.indexOf('Estação')
+ l1.splice(p_estacao, 0, 'Vila Imperador')
+
+        
+ l1.splice(l1.indexOf('Aeroporto I'), 0, 'Jardim Alvorada')
+
+for(let x = l1.length - 1; x >= 0; x--) {
+ document.write(l1[x] + '<br>')}
+
+ document.write('<hr>')
+
+ l1.splice(l1.indexOf('Centro'), 1, '9 de Julho', 'Champagnat')
+
+for(let x = 0; x < l1.length; x++) {
+document.write(l1[x] + '<br>') }
+
+document.write('<hr>')
+
+        
+     
+ l1.splice(l1.length - 2) 
+
+ l1.splice(l1.indexOf('Santa Teresinha'), 1)
+
+for(let estacao of l1) {
+ document.write(estacao + '<br>') }    
+        
+        
 
     </script>
 </head>
