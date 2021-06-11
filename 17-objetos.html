@@ -8,28 +8,23 @@
         // Ativa verificações adicionais de variáveis
         // Modo "chato" do JavaScript
         'use strict'
-
         // Minicadastro de pacientes
         const paciente1 = ['Bartira Barbosa', 40, 'F', 'bartirab@gmail.com', 1.67, 56]
         const paciente2 = ['Asdrúbal Azevedo', 67, 'M', null, 1.78, 95]
         const paciente3 = ['Lindomar Lustosa', 33, 'M', 'lindomar@bol.com.br', 1.63, 58]
         const paciente4 = ['Euripa Emiliano', 55, 'F', 'euripae@hotmail.com', 1.8, 89]
-
         // Calculando o IMC do paciente 3 (imc = peso / (altura)²)
         let imc3 = paciente3[5] / (paciente3[4] ** 2)
         document.write(`O IMC do paciente ${paciente3[0]} é ${imc3}<br>`)
-
         /**********************************************************
          * OBJETOS
          * Um objeto é uma estrutura da linguagem JS que permite
          * armazenar vários valores dentro de uma única variável
          * em posições NOMEADAS (e não numeradas, como no vetor)
         **********************************************************/
-
         // Criação de um objeto vazio
         const objPaciente1 = {}             // Modo mais recente
         const objPaciente2 = new Object()   // Modo tradicional
-
         // Armazenando dados em um objeto que foi criado vazio
         // "nome", aqui, é a POSIÇÃO NOMEADA na qual será armazenada a informação
         // Essa posição é chamada ATRIBUTO ou PROPRIEDADE
@@ -39,7 +34,6 @@
         objPaciente1.email = 'bartirab@gmail.com'
         objPaciente1.altura = 1.67
         objPaciente1.peso = 56
-
         // As propriedades podem ser criadas em qualquer ordem
         objPaciente2.nome = 'Asdrúbal Azevedo'
         objPaciente2.email = null
@@ -52,10 +46,8 @@
         // A sintaxe dos colchetes SEMPRE funciona, mesmo quando o nome da propriedade 
         // tem uma palavra só
         objPaciente2['altura'] = 1.78  // Equivale a: objPaciente2.altura = 1.78
-
         // Criando um objeto já com propriedades e seus valores
         const objPaciente3 = { nome: 'Lindomar Lustosa', idade: 33, sexo: 'M', email: 'lindomar@bol.com.br', altura: 1.63, peso: 58 }
-
         // As propriedades podem ser quebradas em linhas para melhor legibilidade
         const objPaciente4 = {
             // Nomes de propriedade normalmente são uma única palavra sem acentos
@@ -64,6 +56,7 @@
             nome: 'Euripa Emiliano',
             // Em alguns casos, precisamos lidar com propriedades contendo
             // espacos ou acentos. Nesses casos, o nome da propriedade deve
+            // espaços ou acentos. Nesses casos, o nome da propriedade deve
             // vir entre aspas (simples ou duplas)
             'documento de identidade': '44.444.444-44',
             peso: 89,
@@ -75,11 +68,37 @@
         let imc4 = objPaciente4.peso / (objPaciente4.altura ** 2)
         document.write(`O IMC da paciente ${objPaciente4.nome} é ${imc4}<br>`)
 
+        // Acessando as propriedades de um objeto por meio de variáveis que
+        // contêm o nome das propriedades. Nesse caso, é necessário usar a
+        // sintaxe dos colchetes
+        let nomeProp1 = 'nome'
+        let nomeProp2 = 'idade'
+        let nomeProp3 = 'peso'
 
+        document.write(`Nome do paciente 4: ${objPaciente4[nomeProp1]}<br>`)
+        document.write(`Idade do paciente 4: ${objPaciente4[nomeProp2]}<br>`)
+        document.write(`Peso do paciente 4: ${objPaciente4[nomeProp3]}<br>`)
+
+        // Como descobrir o nome de todas as propriedades de um objetos?
+        // Resposta: loop for..in
+
+        document.write('---------------------------------<br>')
+
+        // Descobrindo as propriedades do objPaciente2
+        for(let prop in objPaciente2) {
+            document.write(prop + '<br>')
+        }
+
+        document.write('---------------------------------<br>')
+
+        // Listagem de um objeto com o loop for..in
+        for(let key in objPaciente1) {
+            document.write(`${key} => ${objPaciente1[key]}<br>`)
+        } 
 
     </script>
 </head>
 <body>
-
+    
 </body>
-</html> 
+</html>
