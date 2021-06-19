@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -39,11 +40,13 @@
             margin: 0 auto;
         }
     </style>
-    
 </head>
-
 <body>
-
+    <main>
+        <h1>Franca/SP no Censo 2010</h1>
+        <img src="bandeira-franca.jpg" alt="Bandeira de Franca/SP" />
+        <ul id="dados"></ul>
+    </main>
     <script>
         // Ativa verificações adicionais de variáveis
         // Modo "chato" do JavaScript
@@ -81,16 +84,49 @@
         }
 
         /*
-
             1. Capture o elemento cujo id é "dados" em uma variável.
+        */
 
+        // Captura do elemento cujo id é dados (via querySelector())
+        const elDados = document.querySelector('#dados')
+        // ou: const elDados.getElementById('dados')
+
+        /*
             2. Declare uma variável e inicialize-a com o valor 0 (zero). Usando o loop for
                tradicional ou o loop for..of, some os valores do vetor "populacao" e armazene
                o resultado na variável.
+        */
+        let popTotal = 0
 
+        // Soma dos elementos do vetor usando for tradicional
+        for(let i = 0; i < populacao.length; i++) { // For tradicional
+            popTotal += populacao[i]
+        }
+
+        /*
+            Alternativa: usando for..of
+            for(let quant of populacao) {
+                popTotal += quant
+            }
+        */
+
+        /*
             3. Declare uma função que receba área e população e retorne a densidade populacional,
                dividindo a segunda pela primeira.
+        */
 
+        // Declaração de função com dois parâmetros e valor de retorno
+        function densidadePop(area, populacao) {
+            return populacao / area
+
+            /*
+                Alternativa:
+                let densidade = populacao / area
+                return densidade
+            */
+        }
+
+        /*
             4. Crie novos itens de lista em código e coloque neles as informações do objeto "info".
                Os novos itens de lista devem ser adotados pelo elemento cujo id é "dados". Além das
                informações contidas no objeto "info", devem ser criados também:
@@ -98,42 +134,53 @@
                   na instrução nº 2.
                b) um item de lista para informar a densidade populacional, mostrando o resultado de
                   uma chamada à função delcarada na instrução nº 3.
-
                Ao preencher o conteúdo dos quatro primeros itens de lista, você deve referenciar 
                as propriedades do objeto "info".
-
                Veja como deve ficar observando a imagem "resultado.jpg".
+        */
 
+        // Criação do item "Altitude"
+        const elAltitude = document.createElement('li')
+        elAltitude.textContent = `Altitude: ${info.altitude} m`
+        // ou: elAltitude.textContent = 'Altitude: ' + info.altitude + ' m'
+        elDados.appendChild(elAltitude)
+
+        // Criação do item "Aniversário"
+        const elAniver = document.createElement('li')
+        elAniver.textContent = `Aniversário: ${info['aniversário']}`
+        elDados.appendChild(elAniver)
+
+        // Criação do item "Gentílico"
+        const elGentilico = document.createElement('li')
+        elGentilico.textContent = `Gentílico: ${info['gentílico']}`
+        dados.appendChild(elGentilico)
+
+        // Criação do item "Área"
+        const elArea = document.createElement('li')
+        elArea.textContent = `Área: ${info['área']} km²`
+        elDados.appendChild(elArea)
+
+        // Criação do item "População"
+        const elPopulacao = document.createElement('li')
+        elPopulacao.textContent = `População: ${popTotal} hab.`
+        elDados.appendChild(elPopulacao)
+
+        // Criação do item "Densidade populacional"
+        const elDensidadePop = document.createElement('li')
+        elDensidadePop.textContent = `Densidade populacional: ${densidadePop(info['área'], popTotal)} hab./km²`
+        /*
+            Alternativa usando variável intermediária
+            let densPop = densidadePop(info['área'], popTotal)
+            elDensidadePop.textContent = `Densidade populacional: ${densPop}  hab./km²`
+        */
+        elDados.appendChild(elDensidadePop)
+
+        /*
             5. Comente as principais linhas do seu código, explicando seu propósito.
-
             6. Gere um arquivo ZIP com os arquivos da prova e anexe-o no Microsoft Teams até o
                horário limite.
         */
-        
-
-// fazendo a captura do elemento cujo id é "dados" em uma variável.
-let captura_dados = document.getElementById ("captura_dados");
-
-/* Declarando uma variável e inicializo ela com o valor 0 */
-let total_popu = 0;
-
-
-/*Usando o loop for tradicional , somando os valores do vetor "populacao" e armazenando  o resultado na variável. */
-for (const pess of populacao)
-{total_popu += pess;}
-
-/*  Declarando uma função que recebe área e população e retorne a densidade populacional,dividindo a segunda pela primeira.*/
-
-function densidade (area, populacao)
- { let total =  populacao / area;
- return total; };
-
 
     </script>
-    <main>
-        <h1>Franca/SP no Censo 2010</h1>
-        <img src="bandeira-franca.jpg" alt="Bandeira de Franca/SP" />
-        <ul id="dados"></ul>
-    </main>
 </body>
 </html>
